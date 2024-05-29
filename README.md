@@ -1,1 +1,2 @@
-# Motorcykeleventyr-Videreudvikling
+# Motorcykeleventyr
+ Multimediedesign - 2. semester eksamensprojekt
