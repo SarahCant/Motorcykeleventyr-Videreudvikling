@@ -42,6 +42,11 @@ body {
     font-family: var(--main_font);
 }
 
+main {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
 h1, h2, h3, h4, button {
     font-family: var(--header_font);
 }
@@ -70,6 +75,7 @@ h5 {
 }
 
 main p {
+    font-size: var(--s_font);
     line-height: 150%;
 }
 
@@ -90,7 +96,7 @@ input::placeholder,
 textarea::placeholder {
     color: var(--clr_dark);
     font-family: var(--main_font);
-    font-size: var(--s_font);
+    font-size: var(--xs_font);
     font-weight: 300;
     opacity: .9;
 }
@@ -186,7 +192,7 @@ nav {
 
 .menu_arrow {
     cursor: pointer;
-    height: 1.2vw;
+    height: var(--s_font);
     rotate: 0deg;
     transition: rotate 400ms ease-in;
 }
@@ -1050,7 +1056,7 @@ nav {
     padding-top: 2%;
 }
 
-#faq {
+.faq h2 {
     align-self: center;
 }
 
