@@ -1,3 +1,14 @@
+//funkionalitet til BURGERMENU
+const burgerMenu = document.querySelector(".burger_menu");
+
+burgerMenu.addEventListener("click", () => {
+  const menu = document.querySelector(".menu");
+  
+  burgerMenu.classList.toggle("active");
+  menu.classList.toggle("active");
+})
+
+
 //funkionalitet til NAVIGATION
 
 //Funktion, der bruger parametre (menuId og arrowId) for at den kan virke til hvert menupunkt og pil med hver deres undermenu

@@ -30,6 +30,15 @@
     --m_font: clamp(0.75rem, 1.5vw, 1.5rem);
     --s_font: clamp(0.5rem, 1.2vw, 1.2rem);
     --xs_font: clamp(0.2rem, 1vw, 1rem);
+
+    /*--- burgermenu ---*/
+    --bar_height: 2px;
+    --bar_width: 22px;
+    --burger_gap: 4px;
+    --burger_margin: 3px;
+    --burger_height: calc(var(--bar_height) * 3 + var(--burger_gap) * 2);
+    --burger_animation: .3s ease-in-out;
+    --x_width: calc(var(--burger_height) * 1.41421356237);
 }
 
 /* ------------------
@@ -243,7 +252,7 @@ nav {
 
 .menu_icons img {
     cursor: pointer;
-    height: 45%;
+    max-height: 45%;
     max-width: 50%;
 }
 
@@ -299,6 +308,76 @@ nav {
 .show {
     opacity: 1;
     transform: scaleY(1);
+}
+
+/* --- BURGERMENU --- */
+
+.burger_menu {
+    cursor: pointer;
+    display: none;
+}
+
+.bar {
+    background-color: var(--clr_light);
+    display: block;
+    height: var(--bar_height);
+    transform-origin: left center;
+    transition: all var(--burger_animation);
+    width: var(--bar_width);
+}
+
+@media (max-width: 500px) {
+    .menu_icons {
+        align-items: center;
+        width: 25%;
+    }
+
+    .menu_icons img {
+        max-height: var(--burger_height);
+    }
+
+    .burger_menu {
+        display: flex;
+        flex-direction: column;
+        gap: var(--burger_gap);
+    }
+
+    .burger_menu.active .bar:nth-child(1) {
+        transform: rotate(45deg);
+        translate: 0 calc(var(--bar_height) / -2);
+        width: var(--x_width);
+    }
+    
+    .burger_menu.active .bar:nth-child(2) {
+        opacity: 0;
+        width: 0;
+    }
+
+    .burger_menu.active .bar:nth-child(3) {
+        transform: rotate(-45deg);
+        translate: 0 calc(var(--bar_height) / 2);
+        width: var(--x_width);
+    }
+    
+    .menu {
+        background-color: var(--clr_main);
+        top: 100%;
+        flex-direction: column;
+        gap: 10px;
+        left: 0;
+        opacity: 0;
+        padding: 2% 5%;
+        position: absolute;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: all .3s ease-in;
+        width: 100%;
+    }
+
+    .menu.active {
+        opacity: 1;
+        transform: scaleY(1);
+    }
 }
 
 /* ------------------
