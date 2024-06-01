@@ -1405,17 +1405,15 @@ footer h3 {
         max-width: 425px;
     }
 
+    h2{
+        margin: 2 0;
+    }
+
     h5 {
         font-size: var(--l_font);
         line-height: 110%;
         margin-bottom: 0;
     }
-
-
-    h2{
-        margin: 2 0;
-    }
-
 
     /* ------------------
         FORSIDE
@@ -1423,6 +1421,10 @@ footer h3 {
 
     .welcome {
         margin-bottom: 0lh;
+    }
+
+    .welcome h5 {
+        font-size: var(--m_font);
     }
 
     /* KARRUSEL */
