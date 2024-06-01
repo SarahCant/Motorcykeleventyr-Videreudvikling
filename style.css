@@ -1385,3 +1385,65 @@ footer h3 {
     grid-area: copyright;
     margin-top: 2%;
 }
+
+
+
+
+/* -------------- MOBIL STYLES -------------- */
+@media only and (max-width: 425px) {
+    :root {
+          /*--- skriftstørrelser ---*/
+    --xl_font: clamp(1.5rem, 4vw, 2rem);
+    --l_font: clamp(1rem, 3vw, 1.5rem);
+    --m_font: clamp(0.75rem, 2.5vw, 1.2rem);
+    --s_font: clamp(0.5rem, 2vw, 1rem);
+    --xs_font: clamp(0.4rem, 1.5vw, 0.8rem);
+    }
+  
+
+    /* --- GENEREL STYLING ---  */
+    main {
+        max-width: 425px;
+    }
+
+
+    h1, h2, h3, h4, button {
+        font-family: var(--header_font);
+    }
+
+    h1 {
+        font-size: var(--xl_font);
+    }
+
+    h2 {
+        font-size: var(--l_font);
+    }
+
+    h3 {
+        font-size: var(--l_font);
+    }
+
+    h5 {
+        font-size: var(--l_font);
+    }
+
+    main p {
+        font-size: var(--s_font);
+    }
+
+    .cta_btn {
+        font-weight: ;
+    }
+
+
+    /* ----- FORSIDE ----- */
+    
+
+
+
+
+
+
+
+
+}
