@@ -320,6 +320,10 @@ nav {
 }
 
 @media (max-width: 500px) {
+    nav {
+        padding: 2% 5%;
+    }
+
     .menu_icons {
         align-items: center;
         width: 25%;
