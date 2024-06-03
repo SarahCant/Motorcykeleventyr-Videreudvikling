@@ -1,14 +1,3 @@
-//funkionalitet til BURGERMENU
-const burgerMenu = document.querySelector(".burger_menu");
-
-burgerMenu.addEventListener("click", () => {
-  const menu = document.querySelector(".menu");
-  
-  burgerMenu.classList.toggle("active");
-  menu.classList.toggle("active");
-})
-
-
 //funkionalitet til NAVIGATION
 
 //Funktion, der bruger parametre (menuId og arrowId) for at den kan virke til hvert menupunkt og pil med hver deres undermenu
@@ -57,21 +46,48 @@ function toggleSearchBar() {
     // Tjek om søgefeltet allerede er synligt
     const isOpen = searchBar.classList.contains("show");
 
-    //Luk alle undermenuer hvis søgefeltet åbnes
+    // Luk alle undermenuer hvis søgefeltet åbnes
     const allSubMenus = document.querySelectorAll(".sub_menu");
     allSubMenus.forEach((menu) => {
         menu.classList.remove("show");
     });
 
-    //Fjern eventuel rotation fra alle pile
+    // Fjern eventuel rotation fra alle pile
     const allArrows = document.querySelectorAll(".menu_arrow");
     allArrows.forEach((arrow) => {
         arrow.classList.remove("rotate");
     });
 
+    // Luk menuen, hvis den er åben (mobile)
+    const menu = document.querySelector(".menu");
+    const burgerMenu = document.querySelector(".burger_menu");
+    if (menu.classList.contains("active")) {
+        menu.classList.remove("active");
+        burgerMenu.classList.remove("active");
+    }
+
     //Gør søgefelt synligt, hvis det ikke allerede er synligt
     searchBar.classList.toggle("show", !isOpen);
 }
+
+const burgerMenu = document.querySelector(".burger_menu");
+
+//Funkion til BURGERMENU
+burgerMenu.addEventListener("click", () => {
+
+  // Konstanter til menuen på mindre skærmstørrelser
+  const menu = document.querySelector(".menu");
+  
+  //Luk søgefeltet, hvis det er synligt
+  const searchBar = document.getElementById("search_bar");
+  if (searchBar.classList.contains("show")) {
+      searchBar.classList.remove("show");
+  }
+  
+  // Åben eller luk menuen og animer burgermenu-ikon til kryds
+  burgerMenu.classList.toggle("active");
+  menu.classList.toggle("active");
+})
 
 // EVENTLISTENERS:
 
@@ -114,6 +130,11 @@ document.addEventListener("click", function(event) {
 
         const searchBar = document.getElementById("search_bar");
         searchBar.classList.remove("show");
+
+        const menu = document.querySelector(".menu");
+        const burgerMenu = document.querySelector(".burger_menu");
+        menu.classList.remove("active");
+        burgerMenu.classList.remove("active");
     }
 });
 
